@@ -20,6 +20,8 @@ namespace WindowsLiveWriter.SourceCode
         {
             DialogResult result = DialogResult.Cancel;
 
+            content = HtmlServices.HtmlDecode(content);
+
             using (CodeForm form = new CodeForm(content))
             {
                 result = form.ShowDialog(dialogOwner);
